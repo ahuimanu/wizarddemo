@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wizardrepository", "wizardr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wizardui", "wizardui\wizardui.csproj", "{1AAA74B2-5609-46E7-B8E1-274FC9AB9370}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wizarddata", "wizarddata\wizarddata.csproj", "{A94CC0A1-2102-413F-8567-611FBC08AA0A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,5 +46,17 @@ Global
 		{1AAA74B2-5609-46E7-B8E1-274FC9AB9370}.Release|x64.Build.0 = Release|Any CPU
 		{1AAA74B2-5609-46E7-B8E1-274FC9AB9370}.Release|x86.ActiveCfg = Release|Any CPU
 		{1AAA74B2-5609-46E7-B8E1-274FC9AB9370}.Release|x86.Build.0 = Release|Any CPU
+		{A94CC0A1-2102-413F-8567-611FBC08AA0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A94CC0A1-2102-413F-8567-611FBC08AA0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A94CC0A1-2102-413F-8567-611FBC08AA0A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A94CC0A1-2102-413F-8567-611FBC08AA0A}.Debug|x64.Build.0 = Debug|Any CPU
+		{A94CC0A1-2102-413F-8567-611FBC08AA0A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A94CC0A1-2102-413F-8567-611FBC08AA0A}.Debug|x86.Build.0 = Debug|Any CPU
+		{A94CC0A1-2102-413F-8567-611FBC08AA0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A94CC0A1-2102-413F-8567-611FBC08AA0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A94CC0A1-2102-413F-8567-611FBC08AA0A}.Release|x64.ActiveCfg = Release|Any CPU
+		{A94CC0A1-2102-413F-8567-611FBC08AA0A}.Release|x64.Build.0 = Release|Any CPU
+		{A94CC0A1-2102-413F-8567-611FBC08AA0A}.Release|x86.ActiveCfg = Release|Any CPU
+		{A94CC0A1-2102-413F-8567-611FBC08AA0A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace wizardrepository.Data
+namespace wizarddata.Data
 {
     public class Disposition
     {

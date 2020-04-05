@@ -1,7 +1,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 
-namespace wizardrepository.Data
+namespace wizarddata.Data
 {
     public class WizardContext : DbContext
     {
