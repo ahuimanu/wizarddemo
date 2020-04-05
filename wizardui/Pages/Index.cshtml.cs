@@ -16,7 +16,7 @@ namespace wizardui.Pages
         public IEnumerable<Disposition> DispositionList {get; set;}
 
         private readonly ILogger<IndexModel> _logger;
-        private readonly IUnitOfWork _UOW;        
+        private readonly IUnitOfWork _UOW;
 
         public IndexModel(ILogger<IndexModel> logger, IUnitOfWork uow)
         {
