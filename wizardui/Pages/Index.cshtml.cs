@@ -12,22 +12,17 @@ namespace wizardui.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
-
-        public IndexModel(ILogger<IndexModel> logger)
-        {
-            _logger = logger;
-        }
-
-        private readonly IUnitOfWork _UOW;
-
-        public IndexModel(IUnitOfWork uow)
-        {
-            _UOW = uow;
-        }
-
         [BindProperty]
         public IEnumerable<Disposition> DispositionList {get; set;}
+
+        private readonly ILogger<IndexModel> _logger;
+        private readonly IUnitOfWork _UOW;        
+
+        public IndexModel(ILogger<IndexModel> logger, IUnitOfWork uow)
+        {
+            _logger = logger;
+            _UOW = uow;            
+        }
 
         public async Task OnGetAsync()
         {

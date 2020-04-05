@@ -19,11 +19,12 @@
             @foreach (var disposition in Model.DispositionList)
             {
                 <tr>
-                    <th scope="row">@count++</th>
+                    <th scope="row">@count</th>
                     <td>@disposition.Name</td>
                     <td>@disposition.Description</td>
                     <td>@disposition.Category</td>
-                </tr>                
+                </tr>
+                { count++; }
             }
         </tbody>
     </table>
