@@ -6,6 +6,9 @@ Based heavily on [Gary Woodfine's](https://garywoodfine.com/generic-repository-p
 # Notes
 
 Things to look out for:
+* when running a new project, don't forget it is neccesary to run the Entity Framework tool commands:
+ * `dotnet ef migrations add InitialCreate`
+ * `dotnet ef database update`
 * When placing an EF database context in its own project, you need to be mindful of the *other target frameworks* section of [this article](https://docs.microsoft.com/en-us/ef/core/miscellaneous/cli/dotnet#other-target-frameworks)
 * this means you need to run the `ef` tooling like this: `dotnet ef migrations add InitialCreate --startup-project ../wizardui/wizardui.csproj`
 * You may need to periodically go to the *Windows Task Manager* and kill `.NET Host Service` when dotnet commands fail (happenend when running above commands)

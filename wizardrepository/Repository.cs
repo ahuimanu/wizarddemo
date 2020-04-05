@@ -23,6 +23,16 @@ namespace wizardrepository
             return query.FirstOrDefault();
         }
 
+
+        /* the "predicate" is the same as the LINQ expression in this example:
+                // Define the query expression.
+                IEnumerable<int> scoreQuery =
+                from score in scores
+                where score > 80
+                select score;
+
+            where the LINQ expression is to the right of the assignment operator
+        */
         public IEnumerable<T> GetList(Expression<Func<T, bool>> predicate = null)
         {
             IQueryable<T> query = _dbSet;

@@ -32,7 +32,7 @@ namespace wizardui
             //add database and add UnitOfWork using Wizard Context
             services.AddDbContext<WizardContext>(options => 
                 options.UseSqlite(Configuration.GetConnectionString("WizardContext")))
-                       .AddUnitOfWork<WizardContext>();
+                    .AddUnitOfWork<WizardContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

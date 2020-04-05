@@ -23,12 +23,10 @@ namespace wizardrepository
         Task AddAsync(params T[] entities);
         Task AddAsync(IEnumerable<T> entities, CancellationToken cancellationToken = default(CancellationToken));
 
-
         // Task Delete(T entity, CancellationToken cancellationToken = default(CancellationToken));
         // Task Delete(object id);
         // Task Delete(params T[] entities);
         // Task Delete(IEnumerable<T> entities, CancellationToken cancellationToken = default(CancellationToken));
-        
         
         void UpdateAsync(T entity);
         // Task UpdateAsync(params T[] entities);
