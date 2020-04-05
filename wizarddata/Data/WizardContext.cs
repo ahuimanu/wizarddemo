@@ -33,7 +33,7 @@ namespace wizarddata.Data
                     },
                     new Disposition 
                     {
-                        Id = 1,
+                        Id = 2,
                         Name = "Purpose-Driven",
                             Category = "Qualities",
                             Discipline = "Information Systems",
@@ -48,7 +48,7 @@ namespace wizarddata.Data
                     },
                     new Disposition 
                     {
-                        Id = 1,
+                        Id = 3,
                         Name = "Self-Directed",
                             Category = "Qualities",
                             Discipline = "Information Systems",

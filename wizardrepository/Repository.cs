@@ -23,7 +23,7 @@ namespace wizardrepository
             return query.FirstOrDefault();
         }
 
-        public IQueryable<T> GetList(Expression<Func<T, bool>> predicate = null)
+        public IEnumerable<T> GetList(Expression<Func<T, bool>> predicate = null)
         {
             IQueryable<T> query = _dbSet;
             if (predicate != null){

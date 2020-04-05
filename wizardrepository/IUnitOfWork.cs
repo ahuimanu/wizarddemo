@@ -7,6 +7,7 @@ namespace wizardrepository
     {
 
         IRepository<TEntity> GetRepository<TEntity>() where TEntity : class;
+        IRepositoryAsync<TEntity> GetRepositoryAsync<TEntity>() where TEntity : class;
 
         int SaveChanges();        
     }

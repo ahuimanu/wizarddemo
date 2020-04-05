@@ -29,13 +29,21 @@ namespace wizardui
         {
             services.AddRazorPages();
 
-            // services.AddDbContext<RazorPagesMovieContext>(options => 
-            //     options.UseSqlite(Configuration.GetConnectionString("WizardContext")));            
+            //add database and add UnitOfWork using Wizard Context
+            services.AddDbContext<WizardContext>(options => 
+                options.UseSqlite(Configuration.GetConnectionString("WizardContext")))
+                       .AddUnitOfWork<WizardContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            //get the database to migrate/update
+            using(var servicescope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
+            {
+                servicescope.ServiceProvider.GetService<WizardContext>().Database.Migrate();
+            }
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

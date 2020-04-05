@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using wizarddata.Data;
+using wizardrepository;
 
 namespace wizardui.Pages
 {
@@ -17,8 +19,22 @@ namespace wizardui.Pages
             _logger = logger;
         }
 
-        public void OnGet()
+        private readonly IUnitOfWork _UOW;
+
+        public IndexModel(IUnitOfWork uow)
         {
+            _UOW = uow;
+        }
+
+        [BindProperty]
+        public IEnumerable<Disposition> DispositionList {get; set;}
+
+        public async Task OnGetAsync()
+        {
+            //var repository = _UOW.GetRepository<Disposition>();
+            var repository = _UOW.GetRepositoryAsync<Disposition>();
+
+            DispositionList = await repository.GetListAsync();
 
         }
     }

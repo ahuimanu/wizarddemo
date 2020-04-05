@@ -30,6 +30,15 @@ namespace wizardrepository
             return (IRepository<TEntity>) _repositories[type];
         }
 
+        public IRepositoryAsync<TEntity> GetRepositoryAsync<TEntity>() where TEntity : class
+        {
+            if (_repositories == null) _repositories = new Dictionary<Type, object>();
+
+            var type = typeof(TEntity);
+            if (!_repositories.ContainsKey(type)) _repositories[type] = new RepositoryAsync<TEntity>(Context);
+            return (IRepositoryAsync<TEntity>) _repositories[type];
+        }        
+
         public int SaveChanges()
         {
             return Context.SaveChanges();

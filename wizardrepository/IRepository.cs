@@ -16,7 +16,7 @@ namespace wizardrepository
 
         //https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/expression-trees/
         //https://nejcskofic.github.io/2017/03/20/dynamic-query-expressions-with-entity-framework/
-        IQueryable<T> GetList(Expression<Func<T, bool>> predicate = null);
+        IEnumerable<T> GetList(Expression<Func<T, bool>> predicate = null);
 
         void Add(T entity);
         void Add(params T[] entities);
