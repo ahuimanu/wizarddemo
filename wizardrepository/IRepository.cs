@@ -12,6 +12,7 @@ namespace wizardrepository
         
         T Search(params object[] keyValues);
         
+        //the expression stores your LINQ query to create an IQueryable
         T GetSingle(Expression<Func<T, bool>> predicate = null);
 
         //https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/expression-trees/
