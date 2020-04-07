@@ -9,6 +9,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Pomelo.EntityFrameworkCore.MySql;
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using wizarddata.Data;
 using wizardrepository.DependencyInjection;
 
@@ -17,9 +19,13 @@ namespace wizardui
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+
+        IWebHostEnvironment Environment{ get; set;}
+
+        public Startup(IConfiguration configuration, IWebHostEnvironment environment)
         {
             Configuration = configuration;
+            Environment = environment;
         }
 
         public IConfiguration Configuration { get; }
@@ -29,10 +35,25 @@ namespace wizardui
         {
             services.AddRazorPages();
 
-            //add database and add UnitOfWork using Wizard Context
-            services.AddDbContext<WizardContext>(options => 
-                options.UseSqlite(Configuration.GetConnectionString("WizardContext")))
-                    .AddUnitOfWork<WizardContext>();
+            if(Environment.IsDevelopment())
+            {
+                //add database and add UnitOfWork using Wizard Context
+                services.AddDbContext<WizardContext>(options => 
+                    options.UseSqlite(Configuration.GetConnectionString("WizardContextLocal")))
+                        .AddUnitOfWork<WizardContext>();
+            }
+            if(Environment.IsProduction()){
+                //add database and add UnitOfWork using Wizard Context
+                services.AddDbContext<WizardContext>(
+                    options => options.UseMySql(Configuration.GetConnectionString("WizardContectDeploy"),
+                                                mySqlOptions => mySqlOptions.ServerVersion(new Version(5, 7, 24), ServerType.MySql)
+                    )).AddUnitOfWork<WizardContext>();
+                
+                // services.AddDbContext<WizardContext>(options => 
+                //     options.UseSqlite(Configuration.GetConnectionString("WizardContectDeploy")))
+                //         .AddUnitOfWork<WizardContext>();                
+            }
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

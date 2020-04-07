@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "d:\\jeff\\Dropbox\\CIS\\CIDM\\CIDM4390\\2020-Spring\\Code\\wizarddemo\\wizarddata\\wizarddata.csproj": {}
+    "D:\\jeff\\Dropbox\\CIS\\CIDM\\CIDM4390\\2020-Spring\\Code\\wizarddemo\\wizarddata\\wizarddata.csproj": {}
   },
   "projects": {
-    "d:\\jeff\\Dropbox\\CIS\\CIDM\\CIDM4390\\2020-Spring\\Code\\wizarddemo\\wizarddata\\wizarddata.csproj": {
+    "D:\\jeff\\Dropbox\\CIS\\CIDM\\CIDM4390\\2020-Spring\\Code\\wizarddemo\\wizarddata\\wizarddata.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\jeff\\Dropbox\\CIS\\CIDM\\CIDM4390\\2020-Spring\\Code\\wizarddemo\\wizarddata\\wizarddata.csproj",
+        "projectUniqueName": "D:\\jeff\\Dropbox\\CIS\\CIDM\\CIDM4390\\2020-Spring\\Code\\wizarddemo\\wizarddata\\wizarddata.csproj",
         "projectName": "wizarddata",
-        "projectPath": "d:\\jeff\\Dropbox\\CIS\\CIDM\\CIDM4390\\2020-Spring\\Code\\wizarddemo\\wizarddata\\wizarddata.csproj",
+        "projectPath": "D:\\jeff\\Dropbox\\CIS\\CIDM\\CIDM4390\\2020-Spring\\Code\\wizarddemo\\wizarddata\\wizarddata.csproj",
         "packagesPath": "C:\\Users\\jeff\\.nuget\\packages\\",
-        "outputPath": "d:\\jeff\\Dropbox\\CIS\\CIDM\\CIDM4390\\2020-Spring\\Code\\wizarddemo\\wizarddata\\obj\\",
+        "outputPath": "D:\\jeff\\Dropbox\\CIS\\CIDM\\CIDM4390\\2020-Spring\\Code\\wizarddemo\\wizarddata\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "c:\\program files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\program files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
           "C:\\Users\\jeff\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -68,6 +68,10 @@
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[3.1.1, )"
             }
           },
           "imports": [
@@ -80,7 +84,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\program files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

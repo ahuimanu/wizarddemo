@@ -11,8 +11,17 @@ You'll need to remember to switch bewteen a local and deployed connection string
     * `sudo apt purge mysql-*` - Get rid of *everything* mysql
     * `sudo apt autoremove` - Get rid of any redidual generated files
 * The, follow this tutorial - [How To Install MySQL on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04)
+    * Create user - `CREATE USER 'dbuser'@'localhost' IDENTIFIED BY 'passsword';`
+    * Give user privileges - `GRANT ALL PRIVILEGES ON *.* TO 'dbuser'@'localhost' WITH GRANT OPTION;`
+    * Reset priviliges on running server - `FLUSH PRIVILEGES;`
 * Use the [Pomelo Foundation](https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql) [MySQL EF Core Connector](https://www.nuget.org/packages/Pomelo.EntityFrameworkCore.MySql/) - `dotnet add package Pomelo.EntityFrameworkCore.MySql --version 3.1.1`
 * Develop a MySQL Connection String - [MySQL connection strings](https://www.connectionstrings.com/mysql/)
+
+Of course, you'll need a database to point to, so that needs to be created on the command line:
+* Login as the user you'll want to access the database with (e.g. `dbuser`)
+* Create the database: `CREATE DATABASE <database_name_here>` (e.g. `CREATE DATABASE wizard`)
+
+It will also be necessary to switch the `ASPNETCORE_ENVIRONMENT` environment variable from *Development* to *Production* when deploying.  See [Use multiple environments in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/environments?view=aspnetcore-3.1).  Please also remember that the [Tutorial: Create a Razor Pages web app with ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/?view=aspnetcore-3.1) covers this in the [Add a model to a Razor Pages app in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/model?view=aspnetcore-3.1&tabs=visual-studio) section of the tutorial.
 
 ## Notes
 
