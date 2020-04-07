@@ -76,7 +76,8 @@ namespace wizardui
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+            //this can cause headaches when testing locally.
+            //app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
