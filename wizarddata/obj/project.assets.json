@@ -6581,19 +6581,19 @@
   },
   "packageFolders": {
     "C:\\Users\\jeff\\.nuget\\packages\\": {},
-    "C:\\program files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "c:\\program files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\jeff\\Dropbox\\CIS\\CIDM\\CIDM4390\\2020-Spring\\Code\\wizarddemo\\wizarddata\\wizarddata.csproj",
+      "projectUniqueName": "d:\\jeff\\Dropbox\\CIS\\CIDM\\CIDM4390\\2020-Spring\\Code\\wizarddemo\\wizarddata\\wizarddata.csproj",
       "projectName": "wizarddata",
-      "projectPath": "D:\\jeff\\Dropbox\\CIS\\CIDM\\CIDM4390\\2020-Spring\\Code\\wizarddemo\\wizarddata\\wizarddata.csproj",
+      "projectPath": "d:\\jeff\\Dropbox\\CIS\\CIDM\\CIDM4390\\2020-Spring\\Code\\wizarddemo\\wizarddata\\wizarddata.csproj",
       "packagesPath": "C:\\Users\\jeff\\.nuget\\packages\\",
-      "outputPath": "D:\\jeff\\Dropbox\\CIS\\CIDM\\CIDM4390\\2020-Spring\\Code\\wizarddemo\\wizarddata\\obj\\",
+      "outputPath": "d:\\jeff\\Dropbox\\CIS\\CIDM\\CIDM4390\\2020-Spring\\Code\\wizarddemo\\wizarddata\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\program files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "c:\\program files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
         "C:\\Users\\jeff\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6659,7 +6659,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\program files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
       }
     }
   },

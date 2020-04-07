@@ -28,7 +28,7 @@ namespace wizardui.Pages
         {
             //var repository = _UOW.GetRepository<Disposition>();
             var repository = _UOW.GetRepositoryAsync<Disposition>();
-
+            _logger.Log(LogLevel.Information, "PHELPS");
             DispositionList = await repository.GetListAsync();
 
         }

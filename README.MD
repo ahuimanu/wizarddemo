@@ -3,7 +3,16 @@
 Based heavily on [Gary Woodfine's](https://garywoodfine.com/generic-repository-pattern-net-core/)
 [Repository Pattern Library](https://github.com/threenine/Threenine.Data).
 
-# Notes
+## Connecting to MySQL with ASP.NET Core
+
+You'll need to remember to switch bewteen a local and deployed connection string in `Startup.cs`.
+
+* First, if you need to blow our your current MySQL install and start over:
+    * `sudo apt purge mysql-*` - Get rid of *everything* mysql
+    * `sudo apt autoremove` - Get rid of any redidual generated files
+    * Follow this tutorial - [How To Install MySQL on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04)
+
+## Notes
 
 Things to look out for:
 * when running a new project, don't forget it is neccesary to run the Entity Framework tool commands:
@@ -20,3 +29,5 @@ Things to look out for:
     * `dotnet add <project> reference <other-project>`
 * testing hint: the testing project needs to talk to the libraries
     * time permitting, we can test the RazorPages app as well
+
+
