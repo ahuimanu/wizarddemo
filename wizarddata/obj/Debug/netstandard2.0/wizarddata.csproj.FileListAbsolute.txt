@@ -1,9 +1,0 @@
-D:\jeff\Dropbox\CIS\CIDM\CIDM4390\2020-Spring\Code\wizarddemo\wizarddata\obj\Debug\netstandard2.0\wizarddata.csprojAssemblyReference.cache
-D:\jeff\Dropbox\CIS\CIDM\CIDM4390\2020-Spring\Code\wizarddemo\wizarddata\obj\Debug\netstandard2.0\wizarddata.csproj.CoreCompileInputs.cache
-D:\jeff\Dropbox\CIS\CIDM\CIDM4390\2020-Spring\Code\wizarddemo\wizarddata\obj\Debug\netstandard2.0\wizarddata.AssemblyInfoInputs.cache
-D:\jeff\Dropbox\CIS\CIDM\CIDM4390\2020-Spring\Code\wizarddemo\wizarddata\obj\Debug\netstandard2.0\wizarddata.AssemblyInfo.cs
-D:\jeff\Dropbox\CIS\CIDM\CIDM4390\2020-Spring\Code\wizarddemo\wizarddata\bin\Debug\netstandard2.0\wizarddata.deps.json
-D:\jeff\Dropbox\CIS\CIDM\CIDM4390\2020-Spring\Code\wizarddemo\wizarddata\bin\Debug\netstandard2.0\wizarddata.dll
-D:\jeff\Dropbox\CIS\CIDM\CIDM4390\2020-Spring\Code\wizarddemo\wizarddata\bin\Debug\netstandard2.0\wizarddata.pdb
-D:\jeff\Dropbox\CIS\CIDM\CIDM4390\2020-Spring\Code\wizarddemo\wizarddata\obj\Debug\netstandard2.0\wizarddata.dll
-D:\jeff\Dropbox\CIS\CIDM\CIDM4390\2020-Spring\Code\wizarddemo\wizarddata\obj\Debug\netstandard2.0\wizarddata.pdb
