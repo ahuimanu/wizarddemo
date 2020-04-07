@@ -20,7 +20,7 @@ namespace wizardui
     public class Startup
     {
 
-        IWebHostEnvironment Environment{ get; set;}
+        IWebHostEnvironment Environment{ get; }
 
         public Startup(IConfiguration configuration, IWebHostEnvironment environment)
         {
@@ -46,7 +46,7 @@ namespace wizardui
                 //add database and add UnitOfWork using Wizard Context
                 services.AddDbContext<WizardContext>(
                     options => options.UseMySql(Configuration.GetConnectionString("WizardContectDeploy"),
-                                                mySqlOptions => mySqlOptions.ServerVersion(new Version(5, 7, 24), ServerType.MySql)
+                                                mySqlOptions => mySqlOptions.ServerVersion(new Version(5, 7, 29), ServerType.MySql)
                     )).AddUnitOfWork<WizardContext>();
                 
                 // services.AddDbContext<WizardContext>(options => 
