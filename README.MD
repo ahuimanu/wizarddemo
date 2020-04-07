@@ -10,7 +10,9 @@ You'll need to remember to switch bewteen a local and deployed connection string
 * First, if you need to blow our your current MySQL install and start over:
     * `sudo apt purge mysql-*` - Get rid of *everything* mysql
     * `sudo apt autoremove` - Get rid of any redidual generated files
-    * Follow this tutorial - [How To Install MySQL on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04)
+* The, follow this tutorial - [How To Install MySQL on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04)
+* Use the [Pomelo Foundation](https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql) [MySQL EF Core Connector](https://www.nuget.org/packages/Pomelo.EntityFrameworkCore.MySql/) - `dotnet add package Pomelo.EntityFrameworkCore.MySql --version 3.1.1`
+* Develop a MySQL Connection String - [MySQL connection strings](https://www.connectionstrings.com/mysql/)
 
 ## Notes
 
