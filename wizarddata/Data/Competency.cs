@@ -12,7 +12,7 @@ namespace wizarddata.Data
         [DataType(DataType.Text)]
         public string Description {get; set;}
         public ICollection<Disposition> Dispostions {get; set;}
-        // public ICollection<CompetencyDispositions> CompetencyDispositions {get; set;}
+        public ICollection<CompetencyDispositions> CompetencyDispositions {get; set;}
     }
 
     public class AtomicCompetency : Competency 

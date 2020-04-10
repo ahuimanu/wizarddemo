@@ -9,7 +9,7 @@
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">#</th>
+                <th scope="col">ID</th>
                 <th scope="col">Name</th>
                 <th scope="col">Description</th>
                 <th scope="col">Cartesian Index</th>
@@ -21,7 +21,7 @@
             @foreach (var ke in Model.KnowledgeElementsList)
             {
                 <tr>
-                    <th scope="row">@count</th>
+                    <th scope="row">@ke.Id</th>
                     <td>@ke.Name</td>
                     <td>@ke.Description</td>
                     <td>@ke.CartesianIndex</td>

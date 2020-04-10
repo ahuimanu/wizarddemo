@@ -23,7 +23,6 @@ namespace wizarddata.Data
 
         public DbSet<Competency> Competencies { get; set;}
         public DbSet<Disposition> Dispositions { get; set; }
-
         public DbSet<CompetencyDispositions> CompetencyDispositions{get; set;}
         public DbSet<KnowledgeElement> KnowledgeElements { get; set;}
         public DbSet<SkillLevel> SkillLevels {get; set;}
@@ -65,32 +64,29 @@ namespace wizarddata.Data
             // });
 
             /* DISPOSITIONS */
-            modelBuilder.Entity<Disposition>(entity =>
-            {
+            // modelBuilder.Entity<Disposition>(entity =>
+            // {
 
-            });      
+            // });      
 
 
             /* COMPETENCY DISPOSITIONS */
-            // many to many: https://docs.microsoft.com/en-us/ef/core/modeling/relationships?tabs=fluent-api%2Cfluent-api-simple-key%2Csimple-key
-            // modelBuilder.Entity<CompetencyDispositions>(cd => {
-            //     cd.HasKey(t => new {t.CompetencyId, t.DispositionId});
-            // });
+            //many to many: https://docs.microsoft.com/en-us/ef/core/modeling/relationships?tabs=fluent-api%2Cfluent-api-simple-key%2Csimple-key
+            modelBuilder.Entity<CompetencyDispositions>(cd => {
+                cd.HasKey(t => new {t.CompetencyId, t.DispositionId});
+            });
 
-            // modelBuilder.Entity<CompetencyDispositions>( cd => {
-            //     cd.HasOne(d => d.Competency)
-            //       .WithMany(c => c.CompetencyDispositions)
-            //       .HasForeignKey(c => c.CompetencyId);
-            // });
+            modelBuilder.Entity<CompetencyDispositions>( cd => {
+                cd.HasOne(d => d.Competency)
+                  .WithMany(c => c.CompetencyDispositions)
+                  .HasForeignKey(c => c.CompetencyId);
+            });
 
-            // modelBuilder.Entity<CompetencyDispositions>( cd => {
-            //     cd.HasOne(c => c.Disposition)
-            //       .WithMany(d => d.CompetencyDispositions)
-            //       .HasForeignKey(d => d.DispositionId);
-            // });
-
-
-
+            modelBuilder.Entity<CompetencyDispositions>( cd => {
+                cd.HasOne(c => c.Disposition)
+                  .WithMany(d => d.CompetencyDispositions)
+                  .HasForeignKey(d => d.DispositionId);
+            });
 
             /* ATOMIC COMPETENCY */
             // modelBuilder.Entity<AtomicCompetency>(e => {

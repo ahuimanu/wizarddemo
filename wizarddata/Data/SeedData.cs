@@ -22,7 +22,7 @@ namespace wizarddata.Data
                 // Look for any KnowledgeElements.
                 Task<KnowledgeElement> ke = context.KnowledgeElements.FirstOrDefaultAsync(k => k.Id == 1);
 
-                if (ke.Result != null)
+                if (ke.Result == null)
                 {
                     List<KnowledgeElement> knowledgeElements = new List<KnowledgeElement>(){
                         new KnowledgeElement{

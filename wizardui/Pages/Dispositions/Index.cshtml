@@ -9,7 +9,7 @@
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">#</th>
+                <th scope="col">ID</th>
                 <th scope="col">Name</th>
                 <th scope="col">Description</th>
                 <th scope="col">Category</th>
@@ -19,7 +19,7 @@
             @foreach (var disposition in Model.DispositionList)
             {
                 <tr>
-                    <th scope="row">@count</th>
+                    <th scope="row">@disposition.Id</th>
                     <td>@disposition.Name</td>
                     <td>@disposition.Description</td>
                     <td>@disposition.Category</td>

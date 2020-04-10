@@ -64,7 +64,7 @@ namespace wizarddata.Migrations
                     Category = table.Column<string>(nullable: true),
                     Discipline = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
-                    CompetencyId = table.Column<int>(nullable: false)
+                    CompetencyId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -74,7 +74,7 @@ namespace wizarddata.Migrations
                         column: x => x.CompetencyId,
                         principalTable: "Competencies",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -114,14 +114,13 @@ namespace wizarddata.Migrations
                 name: "CompetencyDispositions",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     CompetencyId = table.Column<int>(nullable: false),
-                    DispositionId = table.Column<int>(nullable: false)
+                    DispositionId = table.Column<int>(nullable: false),
+                    Id = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CompetencyDispositions", x => x.Id);
+                    table.PrimaryKey("PK_CompetencyDispositions", x => new { x.CompetencyId, x.DispositionId });
                     table.ForeignKey(
                         name: "FK_CompetencyDispositions_Competencies_CompetencyId",
                         column: x => x.CompetencyId,
@@ -135,11 +134,6 @@ namespace wizarddata.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CompetencyDispositions_CompetencyId",
-                table: "CompetencyDispositions",
-                column: "CompetencyId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_CompetencyDispositions_DispositionId",
