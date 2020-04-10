@@ -9,6 +9,8 @@ namespace wizarddata.Data
         public int Id{get; set;}
         public string Name{get; set;}
         public string Description {get; set;}
-        public int CartesianIndex {get; set;}
+
+        [Display(Name = "Cartesian Index")]
+        public int CartesianIndex {get; set;}           
     }
 }

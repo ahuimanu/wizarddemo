@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -16,5 +17,10 @@ namespace wizarddata.Data
         //data type is good to enfore that this will be text (e.g. richtext)
         [DataType(DataType.Text)]
         public string Description {get; set;}
+
+        public int CompetencyId {get; set;}
+        public Competency Competency {get; set;}
+
+
     }
 }

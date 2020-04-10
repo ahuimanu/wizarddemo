@@ -12,9 +12,11 @@ namespace wizarddata.Data
         [DataType(DataType.Text)]
         public string Description {get; set;}
 
+        [Display(Name = "Cartesian Index")]
         public int CartesianIndex {get; set;}
+        
+        [Display(Name = "Semiotic Index")]        
         public int SemioticIndex {get; set;}
         public string Etymology {get; set;}
-
     }
 }
