@@ -75,7 +75,7 @@ namespace wizardui.Pages.Competencies
                 cbvm.KSPairsIndicies = new int[0];
 
                 var serializedout = JsonSerializer.Serialize(cbvm);
-                HttpContext.Session.SetString(SerializedCompetencyJSONKey, serializedout);                
+                HttpContext.Session.SetString(SerializedCompetencyJSONKey, serializedout);
             }
 
             return RedirectToPage("/Competencies/Page2");

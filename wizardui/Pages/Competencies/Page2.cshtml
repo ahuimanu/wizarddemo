@@ -49,7 +49,11 @@
                                                asp-for="DispositionDisplayList[i].Id" />
                                         @Model.DispositionDisplayList[i].Id
                                     </th>
-                                    <td>@Model.DispositionDisplayList[i].Name</td>
+                                    <td>
+                                        <input type="hidden" 
+                                               asp-for="DispositionDisplayList[i].Name" />
+                                        @Model.DispositionDisplayList[i].Name
+                                    </td>
                                     <td>@Model.DispositionDisplayList[i].Description</td>
                                     <td>@Model.DispositionDisplayList[i].Category</td>
                                     <td>@Model.DispositionDisplayList[i].Discipline</td>

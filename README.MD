@@ -23,6 +23,12 @@ Of course, you'll need a database to point to, so that needs to be created on th
 
 It will also be necessary to switch the `ASPNETCORE_ENVIRONMENT` environment variable from *Development* to *Production* when deploying.  See [Use multiple environments in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/environments?view=aspnetcore-3.1).  Please also remember that the [Tutorial: Create a Razor Pages web app with ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/?view=aspnetcore-3.1) covers this in the [Add a model to a Razor Pages app in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/model?view=aspnetcore-3.1&tabs=visual-studio) section of the tutorial.
 
+## Information on Session Variables
+Since HTTP is a stateless protocol, we must have a place to store page state between calls to the page.  Here are some resources specific to RazorPages:
+* [Session and state management in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/app-state?view=aspnetcore-3.1)
+* Tips on how I got my Dispostions to show on Page2: [Checkboxes in a Razor Pages Form](https://www.learnrazorpages.com/razor-pages/forms/checkboxes#collections-of-complex-objects)
+* Reference [Bootstrap Documentation](https://getbootstrap.com/) if you want to know how I made my pages and forms.
+
 ## Notes
 
 Things to look out for:
