@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Session;
 using Microsoft.Extensions.Logging;
 using wizarddata.Data;
 using wizardrepository;
@@ -13,6 +14,9 @@ namespace wizardui.Pages.Competencies
 
     public class IndexModel : PageModel
     {
+
+        public const string TestSessionKey = "_Test";
+        public const string TestSessionValue = "VALUE";
 
         [BindProperty]
         public IEnumerable<Competency> CompetencyList {get; set;}

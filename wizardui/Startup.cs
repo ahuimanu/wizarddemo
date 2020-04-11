@@ -95,6 +95,8 @@ namespace wizardui
 
             app.UseAuthorization();
 
+            app.UseSession();            
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
