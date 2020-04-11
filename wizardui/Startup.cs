@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Session;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -13,6 +15,7 @@ using Pomelo.EntityFrameworkCore.MySql;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using wizarddata.Data;
 using wizardrepository.DependencyInjection;
+using wizardui.Middleware;
 
 
 namespace wizardui
@@ -33,6 +36,15 @@ namespace wizardui
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddDistributedMemoryCache();
+
+            services.AddSession(options => {
+                options.IdleTimeout = TimeSpan.FromSeconds(30);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
+
             services.AddRazorPages();
 
             //add database and add UnitOfWork using Wizard Context
@@ -72,8 +84,12 @@ namespace wizardui
             }
 
             //this can cause headaches when testing locally.
+            //uncomment for deploy
             //app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            //for session variables
+            app.UseHttpContextItemsMiddleware();
 
             app.UseRouting();
 

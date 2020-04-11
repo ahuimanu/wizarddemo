@@ -71,6 +71,32 @@ namespace wizarddata.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "ConstituentCompetencies",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    MemberCompetencyId = table.Column<int>(nullable: true),
+                    CompetencyId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ConstituentCompetencies", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ConstituentCompetencies_Competencies_CompetencyId",
+                        column: x => x.CompetencyId,
+                        principalTable: "Competencies",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ConstituentCompetencies_Competencies_MemberCompetencyId",
+                        column: x => x.MemberCompetencyId,
+                        principalTable: "Competencies",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "CompetencyDispositions",
                 columns: table => new
                 {
@@ -140,6 +166,16 @@ namespace wizarddata.Migrations
                 column: "DispositionId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_ConstituentCompetencies_CompetencyId",
+                table: "ConstituentCompetencies",
+                column: "CompetencyId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ConstituentCompetencies_MemberCompetencyId",
+                table: "ConstituentCompetencies",
+                column: "MemberCompetencyId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_KSPairs_AtomicCompetencyId",
                 table: "KSPairs",
                 column: "AtomicCompetencyId");
@@ -159,6 +195,9 @@ namespace wizarddata.Migrations
         {
             migrationBuilder.DropTable(
                 name: "CompetencyDispositions");
+
+            migrationBuilder.DropTable(
+                name: "ConstituentCompetencies");
 
             migrationBuilder.DropTable(
                 name: "KSPairs");

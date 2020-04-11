@@ -22,8 +22,9 @@ namespace wizarddata.Data
         }        
 
         public DbSet<Competency> Competencies { get; set;}
-        // public DbSet<AtomicCompetency> AtomicCompetencies {get; set;}
-        // public DbSet<CompositeCompetency> CompositeCompetencies {get; set;}
+        public DbSet<AtomicCompetency> AtomicCompetencies {get; set;}
+        public DbSet<CompositeCompetency> CompositeCompetencies {get; set;}
+        public DbSet<ConstituentCompetency> ConstituentCompetencies {get; set;}
         public DbSet<Disposition> Dispositions { get; set; }
         public DbSet<CompetencyDisposition> CompetencyDispositions {get; set;}
         public DbSet<KnowledgeElement> KnowledgeElements { get; set;}

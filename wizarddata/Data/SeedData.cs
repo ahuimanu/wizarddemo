@@ -196,7 +196,7 @@ namespace wizarddata.Data
                     };
 
                     AtomicCompetency atomic = new AtomicCompetency{
-                        Id = 0,
+                        Id = 1,
                         Name = "Disposition A",
                         Description = "Do Stuff about A",
                         CompetencyDispostions = cdList,
@@ -205,9 +205,6 @@ namespace wizarddata.Data
 
                     context.Competencies.Add(atomic);
                     context.SaveChanges();  
-
-                    
-
                 }                
             }
         }        

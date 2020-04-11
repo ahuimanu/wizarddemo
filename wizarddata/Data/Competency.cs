@@ -21,6 +21,6 @@ namespace wizarddata.Data
     }
     public class CompositeCompetency : Competency
     {
-        IEnumerable<Competency> ConstituentCompetencies {get; set;}
+        ICollection<ConstituentCompetency> ConstituentCompetencies {get; set;}
     }
 }

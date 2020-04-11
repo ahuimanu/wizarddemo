@@ -9,7 +9,7 @@ using wizarddata.Data;
 namespace wizarddata.Migrations
 {
     [DbContext(typeof(WizardContext))]
-    [Migration("20200411004955_InitialSchema")]
+    [Migration("20200411020947_InitialSchema")]
     partial class InitialSchema
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -61,6 +61,27 @@ namespace wizarddata.Migrations
                     b.HasIndex("DispositionId");
 
                     b.ToTable("CompetencyDispositions");
+                });
+
+            modelBuilder.Entity("wizarddata.Data.ConstituentCompetency", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("CompetencyId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("MemberCompetencyId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CompetencyId");
+
+                    b.HasIndex("MemberCompetencyId");
+
+                    b.ToTable("ConstituentCompetencies");
                 });
 
             modelBuilder.Entity("wizarddata.Data.Disposition", b =>
@@ -166,6 +187,13 @@ namespace wizarddata.Migrations
                     b.HasDiscriminator().HasValue("AtomicCompetency");
                 });
 
+            modelBuilder.Entity("wizarddata.Data.CompositeCompetency", b =>
+                {
+                    b.HasBaseType("wizarddata.Data.Competency");
+
+                    b.HasDiscriminator().HasValue("CompositeCompetency");
+                });
+
             modelBuilder.Entity("wizarddata.Data.CompetencyDisposition", b =>
                 {
                     b.HasOne("wizarddata.Data.Competency", "Competency")
@@ -177,6 +205,19 @@ namespace wizarddata.Migrations
                     b.HasOne("wizarddata.Data.Disposition", "Disposition")
                         .WithMany()
                         .HasForeignKey("DispositionId");
+                });
+
+            modelBuilder.Entity("wizarddata.Data.ConstituentCompetency", b =>
+                {
+                    b.HasOne("wizarddata.Data.Competency", "Competency")
+                        .WithMany()
+                        .HasForeignKey("CompetencyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("wizarddata.Data.Competency", "MemberCompetency")
+                        .WithMany()
+                        .HasForeignKey("MemberCompetencyId");
                 });
 
             modelBuilder.Entity("wizarddata.Data.KSPair", b =>
