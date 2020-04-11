@@ -17,6 +17,10 @@ namespace wizarddata.Data
 
                 context.Database.EnsureCreated();
 
+                List<KnowledgeElement> knowledgeElements = null;
+                List<SkillLevel> skillLevels = null;
+                List<Disposition> dispositions = null;
+
                 /* KNOWLEDGE ELEMENTS SEED */
 
                 // Look for any KnowledgeElements.
@@ -24,7 +28,7 @@ namespace wizarddata.Data
 
                 if (ke.Result == null)
                 {
-                    List<KnowledgeElement> knowledgeElements = new List<KnowledgeElement>(){
+                    knowledgeElements = new List<KnowledgeElement>(){
                         new KnowledgeElement{
                             Id = 1,
                             Name = "Control Structures",
@@ -63,7 +67,7 @@ namespace wizarddata.Data
 
                 if (sl.Result == null)
                 {
-                    List<SkillLevel> skillLevels = new List<SkillLevel>(){
+                    skillLevels = new List<SkillLevel>(){
                         new SkillLevel{
                             Id = 1,
                             Name = "Remember",
@@ -113,7 +117,7 @@ namespace wizarddata.Data
 
                 if (disp.Result == null)
                 {
-                    List<Disposition> dispositions = new List<Disposition>(){
+                    dispositions = new List<Disposition>(){
                         new Disposition 
                         {
                             Id = 1,
@@ -161,6 +165,50 @@ namespace wizarddata.Data
                     context.Dispositions.AddRange(dispositions);
                     context.SaveChanges();                    
                 }     
+
+                /* ATOMIC COMPETENCIES SEED */
+
+                // Look for any SkillLevels.
+                Task<Competency> comp = context.Competencies.FirstOrDefaultAsync(d => d.Id == 1);
+
+                if (comp.Result == null){
+
+                    List<CompetencyDisposition> cdList =  new List<CompetencyDisposition>{
+                        new CompetencyDisposition{
+                            Id =  1,
+                            Disposition = dispositions[0]
+                        },
+                        new CompetencyDisposition{
+                            Id = 2,
+                            Disposition = dispositions[1]
+                        }
+                    };
+
+                    List<KSPair> kSPairs = new List<KSPair>{
+                        new KSPair{
+                            KnowledgeElement = knowledgeElements[0],
+                            SkillLevel = skillLevels[5],
+                        },
+                        new KSPair{
+                            KnowledgeElement = knowledgeElements[1],
+                            SkillLevel = skillLevels[4]
+                        }
+                    };
+
+                    AtomicCompetency atomic = new AtomicCompetency{
+                        Id = 0,
+                        Name = "Disposition A",
+                        Description = "Do Stuff about A",
+                        CompetencyDispostions = cdList,
+                        KSPairs = kSPairs
+                    };
+
+                    context.Competencies.Add(atomic);
+                    context.SaveChanges();  
+
+                    
+
+                }                
             }
         }        
     }

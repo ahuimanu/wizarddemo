@@ -11,13 +11,13 @@ namespace wizarddata.Data
         public string Name {get; set;}
         [DataType(DataType.Text)]
         public string Description {get; set;}
-        public ICollection<Disposition> Dispostions {get; set;}
-        public ICollection<CompetencyDispositions> CompetencyDispositions {get; set;}
+        public ICollection<CompetencyDisposition> CompetencyDispostions {get; set;}
+
     }
 
     public class AtomicCompetency : Competency 
     {
-        public KSPair KSPairs{get; set;}
+        public List<KSPair> KSPairs{get; set;}
     }
     public class CompositeCompetency : Competency
     {

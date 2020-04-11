@@ -40,18 +40,21 @@ namespace wizarddata.Migrations
                     b.HasDiscriminator<string>("Discriminator").HasValue("Competency");
                 });
 
-            modelBuilder.Entity("wizarddata.Data.CompetencyDispositions", b =>
+            modelBuilder.Entity("wizarddata.Data.CompetencyDisposition", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
                     b.Property<int>("CompetencyId")
                         .HasColumnType("int");
 
-                    b.Property<int>("DispositionId")
+                    b.Property<int?>("DispositionId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
+                    b.HasKey("Id");
 
-                    b.HasKey("CompetencyId", "DispositionId");
+                    b.HasIndex("CompetencyId");
 
                     b.HasIndex("DispositionId");
 
@@ -67,9 +70,6 @@ namespace wizarddata.Migrations
                     b.Property<string>("Category")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<int?>("CompetencyId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Description")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
@@ -81,8 +81,6 @@ namespace wizarddata.Migrations
                         .HasMaxLength(100);
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CompetencyId");
 
                     b.ToTable("Dispositions");
                 });
@@ -104,8 +102,7 @@ namespace wizarddata.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AtomicCompetencyId")
-                        .IsUnique();
+                    b.HasIndex("AtomicCompetencyId");
 
                     b.HasIndex("KnowledgeElementId");
 
@@ -167,33 +164,24 @@ namespace wizarddata.Migrations
                     b.HasDiscriminator().HasValue("AtomicCompetency");
                 });
 
-            modelBuilder.Entity("wizarddata.Data.CompetencyDispositions", b =>
+            modelBuilder.Entity("wizarddata.Data.CompetencyDisposition", b =>
                 {
                     b.HasOne("wizarddata.Data.Competency", "Competency")
-                        .WithMany("CompetencyDispositions")
+                        .WithMany("CompetencyDispostions")
                         .HasForeignKey("CompetencyId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("wizarddata.Data.Disposition", "Disposition")
-                        .WithMany("CompetencyDispositions")
-                        .HasForeignKey("DispositionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("wizarddata.Data.Disposition", b =>
-                {
-                    b.HasOne("wizarddata.Data.Competency", null)
-                        .WithMany("Dispostions")
-                        .HasForeignKey("CompetencyId");
+                        .WithMany()
+                        .HasForeignKey("DispositionId");
                 });
 
             modelBuilder.Entity("wizarddata.Data.KSPair", b =>
                 {
                     b.HasOne("wizarddata.Data.AtomicCompetency", "AtomicCompetency")
-                        .WithOne("KSPairs")
-                        .HasForeignKey("wizarddata.Data.KSPair", "AtomicCompetencyId")
+                        .WithMany("KSPairs")
+                        .HasForeignKey("AtomicCompetencyId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

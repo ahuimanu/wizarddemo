@@ -35,25 +35,19 @@ namespace wizardui
         {
             services.AddRazorPages();
 
-            if(Environment.IsDevelopment())
-            {
-                //add database and add UnitOfWork using Wizard Context
-                services.AddDbContext<WizardContext>(options => 
-                    options.UseSqlite(Configuration.GetConnectionString("WizardContextLocal")))
-                        .AddUnitOfWork<WizardContext>();
-            }
-            if(Environment.IsProduction()){
-                //add database and add UnitOfWork using Wizard Context
-                services.AddDbContext<WizardContext>(
-                    options => options.UseMySql(Configuration.GetConnectionString("WizardContectDeploy"),
-                                                mySqlOptions => mySqlOptions.ServerVersion(new Version(5, 7, 29), ServerType.MySql)
-                    )).AddUnitOfWork<WizardContext>();
-                
-                // services.AddDbContext<WizardContext>(options => 
-                //     options.UseSqlite(Configuration.GetConnectionString("WizardContectDeploy")))
-                //         .AddUnitOfWork<WizardContext>();                
-            }
+            //add database and add UnitOfWork using Wizard Context
+            services.AddDbContext<WizardContext>(
+                options => options.UseMySql(Configuration.GetConnectionString("WizardContectDeploy"),
+                                            mySqlOptions => mySqlOptions.ServerVersion(new Version(5, 7, 29), ServerType.MySql)
+                )).AddUnitOfWork<WizardContext>();            
 
+            // if(Environment.IsDevelopment())
+            // {
+            //     //add database and add UnitOfWork using Wizard Context
+            //     services.AddDbContext<WizardContext>(options => 
+            //         options.UseSqlite(Configuration.GetConnectionString("WizardContextLocal")))
+            //             .AddUnitOfWork<WizardContext>();
+            // }
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

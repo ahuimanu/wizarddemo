@@ -1,5 +1,5 @@
 ﻿@page
-@model wizardui.Pages.Competency.IndexModel
+@model wizardui.Pages.Competencies.IndexModel
 @{
     ViewData["Title"] = "Competencies";
     int count = 0;
@@ -11,7 +11,7 @@
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">#</th>
+                <th scope="col">Id</th>
                 <th scope="col">Name</th>
                 <th scope="col">Description</th>
             </tr>
@@ -20,7 +20,7 @@
             @foreach (var competency in Model.CompetencyList)
             {
                 <tr>
-                    <th scope="row">@count</th>
+                    <th scope="row">@competency.Id</th>
                     <td>@competency.Name</td>
                     <td>@competency.Description</td>
                 </tr>

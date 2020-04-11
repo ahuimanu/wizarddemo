@@ -18,7 +18,5 @@ namespace wizarddata.Data
         [DataType(DataType.Text)]
         public string Description {get; set;}
 
-        public ICollection<CompetencyDispositions> CompetencyDispositions{get; set;}
-
     }
 }
